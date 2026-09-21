@@ -17,6 +17,7 @@ namespace MaktabTaha.Infrastructure
             services.AddAutoMapper(config => { }, typeof(GenericProfile));
             services.AddTransient<IPasswordHasher, PasswordHasher>();
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IPermissionRepository, PermissionRepository>();
 
             services.AddDbContext<ApplicationDbContext>(x => x.UseSqlServer(connectionString));
         }

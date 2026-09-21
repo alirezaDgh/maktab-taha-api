@@ -1,6 +1,9 @@
 ﻿using AutoMapper;
 using MaktabTaha.Application.DTOs.users.list;
 using MaktabTaha.Application.DTOs.users.single;
+using MaktabTaha.Application.Features.permission.Command.Create;
+using MaktabTaha.Application.Features.permission.Command.Delete;
+using MaktabTaha.Application.Features.permission.Command.Update;
 using MaktabTaha.Application.Features.user.Command.Create;
 using MaktabTaha.Application.Features.user.Command.delete;
 using MaktabTaha.Application.Features.user.Command.update;
@@ -12,6 +15,7 @@ namespace MaktabTaha.Application.Profiles
     {
         public GenericProfile()
         {
+            //USER
             CreateMap<CreateUserCommand, User>();
             CreateMap<UpdateUserCommand, User>()
                 .ForMember(dest => dest.UserName, opt => opt.Ignore())
@@ -22,6 +26,12 @@ namespace MaktabTaha.Application.Profiles
 
             CreateMap<User, UserListDTO>();
             CreateMap<User, GetUserDTO>();
+
+            //PERMISSION
+            CreateMap<CreatePermissionCommand, Permission>();
+            CreateMap<UpdatePermissionCommand, Permission>();
+            CreateMap<DeletePermissionCommand, Permission>();
+
         }
     }
 }

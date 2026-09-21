@@ -18,6 +18,7 @@ namespace MaktabTaha.Infrastructure
             services.AddTransient<IPasswordHasher, PasswordHasher>();
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IPermissionRepository, PermissionRepository>();
+            services.AddTransient<IUserPermissionRepository, UserPermissionRepository>();
 
             services.AddDbContext<ApplicationDbContext>(x => x.UseSqlServer(connectionString));
         }

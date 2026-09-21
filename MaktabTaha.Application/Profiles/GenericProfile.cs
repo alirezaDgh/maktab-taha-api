@@ -7,7 +7,11 @@ using MaktabTaha.Application.Features.permission.Command.Update;
 using MaktabTaha.Application.Features.user.Command.Create;
 using MaktabTaha.Application.Features.user.Command.delete;
 using MaktabTaha.Application.Features.user.Command.update;
+using MaktabTaha.Application.Features.user_permission.Command.Create;
+using MaktabTaha.Application.Features.user_permission.Command.Delete;
+using MaktabTaha.Application.Features.user_permission.Command.Update;
 using MaktabTaha.Domain.Entites;
+using System.Security;
 
 namespace MaktabTaha.Application.Profiles
 {
@@ -31,6 +35,12 @@ namespace MaktabTaha.Application.Profiles
             CreateMap<CreatePermissionCommand, Permission>();
             CreateMap<UpdatePermissionCommand, Permission>();
             CreateMap<DeletePermissionCommand, Permission>();
+
+            //USER PERMISSION
+            CreateMap<CreateUserPermissionCommand, UserPermission>();
+            CreateMap<UpdateUserPermissionCommand, UserPermission>();
+            CreateMap<DeleteUserPermissionCommand, UserPermission>();
+
 
         }
     }

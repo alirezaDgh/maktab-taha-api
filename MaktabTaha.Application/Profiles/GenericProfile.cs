@@ -10,6 +10,7 @@ using MaktabTaha.Application.Features.user.Command.update;
 using MaktabTaha.Application.Features.user_permission.Command.Create;
 using MaktabTaha.Application.Features.user_permission.Command.Delete;
 using MaktabTaha.Application.Features.user_permission.Command.Update;
+using MaktabTaha.Domain.Common;
 using MaktabTaha.Domain.Entites;
 using System.Security;
 
@@ -27,6 +28,7 @@ namespace MaktabTaha.Application.Profiles
                 .ForMember(dest => dest.LastEntry, opt => opt.Ignore())
                 .ForMember(dest => dest.PasswordHash, opt => opt.Ignore());
             CreateMap<DeleteUserCommand, User>();
+            CreateMap<AuthViewModel, User>();
 
             CreateMap<User, UserListDTO>();
             CreateMap<User, GetUserDTO>();

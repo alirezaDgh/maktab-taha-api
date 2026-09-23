@@ -1,5 +1,6 @@
 ﻿using MaktabTaha.Application.Features.user.Command.Create;
 using MaktabTaha.Application.Features.user.Command.delete;
+using MaktabTaha.Application.Features.user.Command.Login;
 using MaktabTaha.Application.Features.user.Command.update;
 using MaktabTaha.Application.Features.user.Query.List;
 using MaktabTaha.Application.Features.user.Query.single;
@@ -47,6 +48,13 @@ namespace MaktabTaha.WebApi.Controllers
         {
             return Ok(await Mediator
                 .Send(new DeleteUserCommand { Id = id }));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> LoginUser([FromBody] LoginUserCommand command)
+        {
+            var result = await Mediator.Send(command);
+            return Ok(result);
         }
     }
 }

@@ -1,6 +1,10 @@
 ﻿using AutoMapper;
+using MaktabTaha.Application.DTOs.initialRequests.List;
 using MaktabTaha.Application.DTOs.users.list;
 using MaktabTaha.Application.DTOs.users.single;
+using MaktabTaha.Application.Features.initialRequest.Command.Approve;
+using MaktabTaha.Application.Features.initialRequest.Command.Create;
+using MaktabTaha.Application.Features.initialRequest.Command.Update;
 using MaktabTaha.Application.Features.permission.Command.Create;
 using MaktabTaha.Application.Features.permission.Command.Delete;
 using MaktabTaha.Application.Features.permission.Command.Update;
@@ -42,6 +46,13 @@ namespace MaktabTaha.Application.Profiles
             CreateMap<CreateUserPermissionCommand, UserPermission>();
             CreateMap<UpdateUserPermissionCommand, UserPermission>();
             CreateMap<DeleteUserPermissionCommand, UserPermission>();
+
+            //InitialRequest
+            CreateMap<CreateInitialRequestCommand, InitialRequest>();
+            CreateMap<UpdateInitialRequestCommand, InitialRequest>();
+            CreateMap<InitialRequest, InitialRequestListDTO>();
+            CreateMap<InitialRequest, GetUserDTO>();
+            CreateMap<ApproveInitialRequestCommand, InitialRequest>();
 
 
         }

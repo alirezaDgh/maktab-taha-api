@@ -9,10 +9,16 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="16.2.0" />
     <PackageReference Include="MediatR" Version="14.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MaktabTaha.Domain\MaktabTaha.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DTOs\initialRequests\Create\" />
+    <Folder Include="DTOs\initialRequests\Update\" />
   </ItemGroup>
 
 </Project>

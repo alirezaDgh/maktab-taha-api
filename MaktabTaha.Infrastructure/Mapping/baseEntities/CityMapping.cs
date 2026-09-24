@@ -19,7 +19,7 @@ namespace MaktabTaha.Infrastructure.Mapping.baseEntities
             builder.HasOne(x => x.province)
                 .WithMany(x => x.cities)
                 .HasForeignKey(x => x.ProvinceId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

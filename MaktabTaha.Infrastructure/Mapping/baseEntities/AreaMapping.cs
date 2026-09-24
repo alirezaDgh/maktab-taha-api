@@ -1,4 +1,5 @@
-﻿using MaktabTaha.Domain.Entites.BaseEntities;
+﻿using AutoMapper;
+using MaktabTaha.Domain.Entites.BaseEntities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -9,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace MaktabTaha.Infrastructure.Mapping.baseEntities
 {
-    public class CharityMainRole : IEntityTypeConfiguration<CaseType>
+    public class AreaMapping : IEntityTypeConfiguration<Area>
     {
-        public void Configure(EntityTypeBuilder<CaseType> builder)
+        public void Configure(EntityTypeBuilder<Area> builder)
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Name);

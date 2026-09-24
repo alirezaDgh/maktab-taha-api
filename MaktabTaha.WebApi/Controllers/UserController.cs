@@ -50,8 +50,8 @@ namespace MaktabTaha.WebApi.Controllers
                 .Send(new DeleteUserCommand { Id = id }));
         }
 
-        [HttpPost]
-        public async Task<IActionResult> LoginUser([FromBody] LoginUserCommand command)
+        [HttpPost("Login")]
+        public async Task<IActionResult> LoginUser(LoginUserCommand command)
         {
             var result = await Mediator.Send(command);
             return Ok(result);

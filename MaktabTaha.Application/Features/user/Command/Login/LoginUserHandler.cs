@@ -41,7 +41,11 @@ namespace MaktabTaha.Application.Features.user.Command.Login
             user.LastEntry = DateTime.UtcNow;
             await _repository.SaveChanges();
 
-            var account = _mapper.Map<AuthViewModel>(user);
+            var account = new AuthViewModel
+            {
+                Id = user.Id,
+                UserName = user.UserName
+            };
 
             var token = _tokenService.GenerateToken(account);
             return operation.Succedded(token);

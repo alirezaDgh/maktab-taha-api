@@ -52,7 +52,7 @@ namespace MaktabTaha.WebApi.Controllers
             return Ok(await Mediator.Send(new DeleteInitialRequestCommand{RequestNumber = id}));
         }
 
-        [HttpPost]
+        [HttpPost("Approve")]
         public async Task<IActionResult> ApproveInitialRequest(ApproveInitialRequestCommand command)
         {
             return Ok(await Mediator.Send(command));

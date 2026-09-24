@@ -10,6 +10,11 @@ namespace MaktabTaha.Infrastructure.Mapping.permission
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Title);
+            builder.HasIndex(x => x.Key).IsUnique();
+            builder.HasOne(x => x.Parent)
+                .WithMany(x => x.Children)
+                .HasForeignKey(x => x.ParentId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

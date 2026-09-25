@@ -29,10 +29,23 @@ namespace MaktabTaha.Application.Features.initialRequest.Command.Approve
             var initRequest = await _repository.SingleOrDefault(x => x.RequestNumber == request.RequestNumber);
             if (initRequest == null) return operation.Failure("درخواست اولیه یافت نشد");
 
-            var mappedData = _mapper.Map(request, initRequest);
+            _mapper.Map(request, initRequest);
+
+            if (request.Attachment != null)
+            {
+                using var memoryStream = new MemoryStream();
+
+                await request.Attachment.CopyToAsync(
+                    memoryStream,
+                    cancellationToken
+                    );
+
+                initRequest.Attachment = memoryStream.ToArray();
+            }
+
             await _repository.SaveChanges();
 
-            return operation.Succedded(mappedData);
+            return operation.Succedded(initRequest);
         }
     }
 }

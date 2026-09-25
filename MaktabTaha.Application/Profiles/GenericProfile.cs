@@ -52,7 +52,9 @@ namespace MaktabTaha.Application.Profiles
             CreateMap<UpdateInitialRequestCommand, InitialRequest>();
             CreateMap<InitialRequest, InitialRequestListDTO>();
             CreateMap<InitialRequest, GetUserDTO>();
-            CreateMap<ApproveInitialRequestCommand, InitialRequest>();
+            CreateMap<ApproveInitialRequestCommand, InitialRequest>()
+                .ForMember(dest => dest.RequestNumber, opt => opt.Ignore())
+                .ForMember(dest => dest.Attachment, opt => opt.Ignore());
 
 
         }

@@ -12,7 +12,7 @@ namespace MaktabTaha.Application.Features.initialRequest.Command.Create
 {
     public class CreateInitialRequestCommand : IRequest<OperationResult<InitialRequest>>
     {
-        public DateTime RequestDate { get; set; }
+        public DateTime RequestDate { get; set; } = DateTime.Now;
         public string RequestDescription { get; set; }
 
         public int RequestTypeId { get; set; }

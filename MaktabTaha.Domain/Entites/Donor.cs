@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaktabTaha.Domain.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace MaktabTaha.Domain.Entites
 {
-    public class Donor
+    public class Donor : BaseEntity<int>
     {
-        public int DonorId { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; } 
         public string FatherName { get; set; } 

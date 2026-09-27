@@ -1,6 +1,5 @@
-﻿using MaktabTaha.Application.DTOs.users.create;
+﻿using MaktabTaha.Application.DTO_s.users.create;
 using MaktabTaha.Application.Helpers;
-using MaktabTaha.Domain.Entites;
 using MediatR;
 
 namespace MaktabTaha.Application.Features.user.Command.Create

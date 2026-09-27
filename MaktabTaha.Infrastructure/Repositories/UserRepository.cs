@@ -1,4 +1,4 @@
-﻿using MaktabTaha.Application.DTOs.users.list;
+﻿using MaktabTaha.Application.DTO_s.users.list;
 using MaktabTaha.Application.Interfaces.Repositories;
 using MaktabTaha.Domain.Entites;
 using Microsoft.EntityFrameworkCore;
@@ -65,7 +65,7 @@ namespace MaktabTaha.Infrastructure.Repositories
 
         public async Task<List<UserListDTO>> GetAllList()
         {
-            var users = await _context.Users
+            var users = await _context.User
                 .AsNoTracking()
                 .Include(x => x.Role)
                     .ThenInclude(x => x.RolePermissions)

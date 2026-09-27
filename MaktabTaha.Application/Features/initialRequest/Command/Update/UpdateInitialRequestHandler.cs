@@ -26,7 +26,7 @@ namespace MaktabTaha.Application.Features.initialRequest.Command.Update
         {
             var operation = new OperationResult<InitialRequest>();
 
-            var initialRequest = await _repository.FirstOrDefault(x => x.RequestNumber == request.RequestNumber);
+            var initialRequest = await _repository.FirstOrDefault(x => x.Id == request.Id);
             if (initialRequest == null) return operation.Failure("درخواست اولیه موجود نمیباشد");
             _mapper.Map(request, initialRequest);
             await _repository.Update(initialRequest);

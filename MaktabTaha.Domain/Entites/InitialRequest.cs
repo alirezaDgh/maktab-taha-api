@@ -1,4 +1,5 @@
-﻿using MaktabTaha.Domain.Entites.BaseEntities;
+﻿using MaktabTaha.Domain.Common;
+using MaktabTaha.Domain.Entites.BaseEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace MaktabTaha.Domain.Entites
 {
-    public class InitialRequest
+    public class InitialRequest : BaseEntity<int>
     {
-        public int RequestNumber { get; set; }
         public DateTime RequestDate { get; set; }
         public string RequestDescription { get; set; }
 

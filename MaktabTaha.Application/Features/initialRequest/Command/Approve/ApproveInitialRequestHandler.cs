@@ -26,7 +26,7 @@ namespace MaktabTaha.Application.Features.initialRequest.Command.Approve
         {
             var operation = new OperationResult<InitialRequest>();
 
-            var initRequest = await _repository.SingleOrDefault(x => x.RequestNumber == request.RequestNumber);
+            var initRequest = await _repository.SingleOrDefault(x => x.Id == request.Id);
             if (initRequest == null) return operation.Failure("درخواست اولیه یافت نشد");
 
             _mapper.Map(request, initRequest);

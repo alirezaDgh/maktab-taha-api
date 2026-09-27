@@ -11,7 +11,7 @@ namespace MaktabTaha.Application.Features.initialRequest.Command.Update
 {
     public class UpdateInitialRequestCommand : IRequest<OperationResult<InitialRequest>>
     {
-        public int RequestNumber { get; set; }
+        public int Id { get; set; }
         public DateTime RequestDate { get; set; }
         public string RequestDescription { get; set; }
 

@@ -16,9 +16,4 @@
     <ProjectReference Include="..\MaktabTaha.Domain\MaktabTaha.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DTOs\initialRequests\Create\" />
-    <Folder Include="DTOs\initialRequests\Update\" />
-  </ItemGroup>
-
 </Project>

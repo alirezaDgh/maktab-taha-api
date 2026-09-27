@@ -10,6 +10,6 @@ namespace MaktabTaha.Application.Features.initialRequest.Command.Delete
 {
     public class DeleteInitialRequestCommand : IRequest<OperationResult<bool>>
     {
-        public int RequestNumber { get; set; }
+        public int Id { get; set; }
     }
 }

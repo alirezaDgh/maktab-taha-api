@@ -14,7 +14,7 @@ namespace MaktabTaha.Infrastructure.Repositories
         }
         public Task<List<RolePermission>> GetListWithoutIsDeleted()
         {
-            return _context.RolePermissions.ToListAsync();
+            return _context.RolePermission.ToListAsync();
         }
     }
 }

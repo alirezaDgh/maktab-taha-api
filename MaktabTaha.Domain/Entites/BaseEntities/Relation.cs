@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaktabTaha.Domain.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace MaktabTaha.Domain.Entites.BaseEntities
 {
-    public class Relation
+    public class Relation : BaseEntity<int>
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public string Title { get; set; }
     }
 }

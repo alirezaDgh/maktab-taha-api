@@ -1,4 +1,4 @@
-﻿using MaktabTaha.Application.DTOs.users.list;
+﻿using MaktabTaha.Application.DTO_s.users.list;
 using MaktabTaha.Domain.Entites;
 
 namespace MaktabTaha.Application.Interfaces.Repositories

@@ -1,7 +1,4 @@
 ﻿using AutoMapper;
-using MaktabTaha.Application.DTOs.initialRequests.List;
-using MaktabTaha.Application.DTOs.users.list;
-using MaktabTaha.Application.DTOs.users.single;
 using MaktabTaha.Application.Features.initialRequest.Command.Approve;
 using MaktabTaha.Application.Features.initialRequest.Command.Create;
 using MaktabTaha.Application.Features.initialRequest.Command.Update;
@@ -15,12 +12,15 @@ using MaktabTaha.Application.Features.role_permission.Command.Create;
 using MaktabTaha.Application.Features.user.Command.Create;
 using MaktabTaha.Application.Features.user.Command.delete;
 using MaktabTaha.Application.Features.user.Command.update;
-using MaktabTaha.Application.Features.role_permission.Command.Create;
 using MaktabTaha.Application.Features.role_permission.Command.Delete;
 using MaktabTaha.Application.Features.role_permission.Command.Update;
 using MaktabTaha.Domain.Common;
 using MaktabTaha.Domain.Entites;
-using System.Security;
+using MaktabTaha.Application.DTO_s.users.list;
+using MaktabTaha.Application.DTO_s.users.single;
+using MaktabTaha.Application.DTO_s.initialRequests.List;
+using MaktabTaha.Domain.Entites.BaseEntities;
+using MaktabTaha.Application.DTOs.BaseEntities.Area.List;
 
 namespace MaktabTaha.Application.Profiles
 {
@@ -56,7 +56,7 @@ namespace MaktabTaha.Application.Profiles
             CreateMap<InitialRequest, InitialRequestListDTO>();
             CreateMap<InitialRequest, GetUserDTO>();
             CreateMap<ApproveInitialRequestCommand, InitialRequest>()
-                .ForMember(dest => dest.RequestNumber, opt => opt.Ignore())
+                .ForMember(dest => dest.Id, opt => opt.Ignore())
                 .ForMember(dest => dest.Attachment, opt => opt.Ignore());
 
             //ROLE
@@ -65,6 +65,10 @@ namespace MaktabTaha.Application.Profiles
             CreateMap<DeleteRoleCommand, Role>();
 
 
+            //Base Entities
+
+            //Area
+            CreateMap<Area, AreaListDTO>();
 
         }
     }

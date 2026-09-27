@@ -23,7 +23,7 @@ namespace MaktabTaha.Application.Features.initialRequest.Command.Delete
         {
             var operation = new OperationResult<bool>();
 
-            var initialRequest = await _repository.GetBy(request.RequestNumber);
+            var initialRequest = await _repository.GetBy(request.Id);
             if (initialRequest == null) return operation.Failure("درخواست اولیه وجود ندارد.");
 
             await _repository.Delete(initialRequest);

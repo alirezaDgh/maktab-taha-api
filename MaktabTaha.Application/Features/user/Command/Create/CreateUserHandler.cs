@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using MaktabTaha.Application.DTOs.users.create;
+using MaktabTaha.Application.DTO_s.users.create;
 using MaktabTaha.Application.Helpers;
 using MaktabTaha.Application.Interfaces.Repositories;
 using MaktabTaha.Domain.Common;

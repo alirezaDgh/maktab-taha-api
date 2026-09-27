@@ -24,7 +24,7 @@ namespace MaktabTaha.WebApi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateInitialRequest(int id, UpdateInitialRequestCommand command)
         {
-            if (id != command.RequestNumber)
+            if (id != command.Id)
                 return BadRequest();
             
             return Ok(await Mediator.Send(command));
@@ -40,7 +40,7 @@ namespace MaktabTaha.WebApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetInitialRequestById(int id, GetInitialRequestByIdCommand command)
         {
-            if (id != command.RequestNumber) 
+            if (id != command.Id) 
                 return BadRequest();
 
             return Ok(await Mediator.Send(command));
@@ -49,7 +49,7 @@ namespace MaktabTaha.WebApi.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteInitialRequest(int id)
         {
-            return Ok(await Mediator.Send(new DeleteInitialRequestCommand{RequestNumber = id}));
+            return Ok(await Mediator.Send(new DeleteInitialRequestCommand{Id = id}));
         }
 
         [HttpPost("approve")]

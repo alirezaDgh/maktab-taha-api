@@ -13,7 +13,7 @@ namespace MaktabTaha.Infrastructure.Mapping.initialRequest
     {
         public void Configure(EntityTypeBuilder<InitialRequest> builder)
         {
-            builder.HasKey(x => x.RequestNumber);
+            builder.HasKey(x => x.Id);
 
             builder.Property(x => x.RequestDate);
 

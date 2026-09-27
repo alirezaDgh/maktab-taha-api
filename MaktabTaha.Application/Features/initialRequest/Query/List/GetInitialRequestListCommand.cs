@@ -1,11 +1,6 @@
 ﻿using MaktabTaha.Application.Helpers;
 using MediatR;
-using MaktabTaha.Application.DTOs.initialRequests.List;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MaktabTaha.Application.DTO_s.initialRequests.List;
 
 namespace MaktabTaha.Application.Features.initialRequest.Query.List
 {

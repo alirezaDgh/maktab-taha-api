@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using MaktabTaha.Application.DTOs.users.update;
 using MaktabTaha.Application.Helpers;
 using MaktabTaha.Application.Interfaces.Repositories;
 using MaktabTaha.Domain.Entites;

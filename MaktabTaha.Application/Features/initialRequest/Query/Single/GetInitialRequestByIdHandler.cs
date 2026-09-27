@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using MaktabTaha.Application.DTOs.initialRequests.Single;
+using MaktabTaha.Application.DTO_s.initialRequests.Single;
 using MaktabTaha.Application.Helpers;
 using MaktabTaha.Application.Interfaces.Repositories;
 using MediatR;
@@ -26,7 +26,7 @@ namespace MaktabTaha.Application.Features.initialRequest.Query.Single
         {
             var operation = new OperationResult<GetInitialRequestDTO>();
 
-            var initialRequest = await _repository.GetBy(request.RequestNumber);
+            var initialRequest = await _repository.GetBy(request.Id);
             if (initialRequest == null) return operation.Failure("درخواست اولیه یافت نشد");
             var mappedData = _mapper.Map<GetInitialRequestDTO>(initialRequest);
             return operation.Succedded(mappedData);

@@ -12,7 +12,7 @@ namespace MaktabTaha.Application.Features.initialRequest.Command.Approve
 {
     public class ApproveInitialRequestCommand : IRequest<OperationResult<InitialRequest>>
     {
-        public int RequestNumber { get; set; }
+        public int Id { get; set; }
         public string Status { get; set; }
         public string StatusReason { get; set; }
         public DateTime ApproveDate { get; set; } = DateTime.Now;

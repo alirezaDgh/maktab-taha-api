@@ -1,9 +1,10 @@
-﻿namespace MaktabTaha.Domain.Entites.BaseEntities
+﻿using MaktabTaha.Domain.Common;
+
+namespace MaktabTaha.Domain.Entites.BaseEntities
 {
-    public class HouseHeadStatus
+    public class HouseHeadStatus : BaseEntity<int>
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public string Title { get; set; }
         public List<HouseHeadStatusDesc> houseHeadStatusDescs { get; set; }
     }
 }

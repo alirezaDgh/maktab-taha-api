@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using MaktabTaha.Application.DTOs.users.list;
+using MaktabTaha.Application.DTO_s.users.list;
 using MaktabTaha.Application.Helpers;
 using MaktabTaha.Application.Interfaces.Repositories;
 using MediatR;

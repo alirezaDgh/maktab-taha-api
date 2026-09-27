@@ -1,4 +1,4 @@
-﻿using MaktabTaha.Application.DTOs.users.single;
+﻿using MaktabTaha.Application.DTO_s.users.single;
 using MaktabTaha.Application.Helpers;
 using MediatR;
 

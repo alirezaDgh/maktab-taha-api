@@ -15,7 +15,7 @@ namespace MaktabTaha.Infrastructure.Mapping.baseEntities
         public void Configure(EntityTypeBuilder<HouseHeadStatusDesc> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Name);
+            builder.Property(x => x.Title);
             builder.Property(x => x.HouseHeadStatusId);
             builder.HasOne(x => x.houseHeadStatus)
                 .WithMany(x => x.houseHeadStatusDescs)

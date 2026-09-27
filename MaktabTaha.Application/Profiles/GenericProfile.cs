@@ -23,6 +23,8 @@ using MaktabTaha.Domain.Entites.BaseEntities;
 using MaktabTaha.Application.DTOs.BaseEntities.Area.List;
 using MaktabTaha.Application.DTOs.BaseEntities.City.List;
 using MaktabTaha.Application.DTOs.BaseEntities.Province.List;
+using MaktabTaha.Application.DTOs.BaseEntities.Religon.List;
+using MaktabTaha.Application.DTOs.BaseEntities.Nationality.List;
 
 namespace MaktabTaha.Application.Profiles
 {
@@ -77,6 +79,8 @@ namespace MaktabTaha.Application.Profiles
 
 
             CreateMap<Province, ProvinceListDTO>();
+            CreateMap<Religon, ReligonListDTO>();
+            CreateMap<Nationalty, NationalityListDTO>();
 
         }
     }

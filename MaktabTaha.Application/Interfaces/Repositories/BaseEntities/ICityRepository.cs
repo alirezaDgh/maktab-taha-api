@@ -1,4 +1,5 @@
-﻿using MaktabTaha.Domain.Entites.BaseEntities;
+﻿using MaktabTaha.Application.DTOs.BaseEntities.City.List;
+using MaktabTaha.Domain.Entites.BaseEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace MaktabTaha.Application.Interfaces.Repositories.BaseEntities
 {
     public interface ICityRepository : IGenericRepository<int, City>
     {
+        Task<List<City>> GetCityListOfProvince(int provinceId);
     }
 }

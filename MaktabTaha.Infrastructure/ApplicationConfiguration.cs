@@ -40,7 +40,6 @@ namespace MaktabTaha.Infrastructure
             services.AddTransient<IEmploymentStatusRepository, EmploymentStatusRepository>();
             services.AddTransient<IGoodWorkTypeRepository, GoodWorkTypeRepository>();
             services.AddTransient<IHouseHeadStatusRepository, HouseHeadStatusRepository>();
-            services.AddTransient<IHouseHeadStatusDescRepository, HouseHeadStatusDescRepository>();
             services.AddTransient<IHousingStatusRepository, HousingStatusRepository>();
             services.AddTransient<IJobRepository, JobRepository>();
             services.AddTransient<INationalityRepository, NationalityRepository>();

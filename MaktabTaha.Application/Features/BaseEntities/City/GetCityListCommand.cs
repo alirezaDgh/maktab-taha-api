@@ -11,5 +11,6 @@ namespace MaktabTaha.Application.Features.BaseEntities.City
 {
     public class GetCityListCommand : IRequest<OperationResult<List<CityListDTO>>>
     {
+        public int ProvinceId { get; set; }
     }
 }

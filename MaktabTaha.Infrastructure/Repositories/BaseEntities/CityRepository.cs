@@ -1,4 +1,5 @@
 ﻿
+using MaktabTaha.Application.DTOs.BaseEntities.City.List;
 using MaktabTaha.Application.Interfaces;
 using MaktabTaha.Application.Interfaces.Repositories.BaseEntities;
 using MaktabTaha.Domain.Entites.BaseEntities;
@@ -12,5 +13,11 @@ public class CityRepository : GenericRepository<int, City>, ICityRepository
     public CityRepository(ApplicationDbContext context) : base(context)
     {
         _context = context;
+    }
+
+    public async Task<List<City>> GetCityListOfProvince(int provinceId)
+    {
+        return await _context.City
+            .Where(x => x.ProvinceId == provinceId).ToListAsync();
     }
 }

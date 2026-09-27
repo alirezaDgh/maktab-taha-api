@@ -1,4 +1,5 @@
 ﻿using MaktabTaha.Application.Features.BaseEntities.City;
+using MaktabTaha.Application.Features.role.Query.single;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MaktabTaha.WebApi.Controllers.BaseEntities;
@@ -7,9 +8,10 @@ namespace MaktabTaha.WebApi.Controllers.BaseEntities;
 [Route("api/[controller]")]
 public class CityController : BaseApiController
 {
-    [HttpGet]
-    public async Task<IActionResult> GetCitiesList()
+    [HttpGet("{provinceId}")]
+    public async Task<IActionResult> GetCitiesList(int provinceId)
     {
-        return Ok(await Mediator.Send(new GetCityListCommand()));
+        var result = await Mediator.Send(new GetCityListCommand() { ProvinceId = provinceId });
+        return Ok(result);
     }
 }

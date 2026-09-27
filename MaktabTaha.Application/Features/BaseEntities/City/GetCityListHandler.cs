@@ -26,7 +26,7 @@ namespace MaktabTaha.Application.Features.BaseEntities.City
         {
             var operation = new OperationResult<List<CityListDTO>>();
 
-            var Citys = await _repository.List();
+            var Citys = await _repository.GetCityListOfProvince(request.ProvinceId);
             var mappedData = _mapper.Map<List<CityListDTO>>(Citys);
             return operation.Succedded(mappedData);
         }

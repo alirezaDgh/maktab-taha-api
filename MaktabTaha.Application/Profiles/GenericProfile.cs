@@ -21,6 +21,8 @@ using MaktabTaha.Application.DTO_s.users.single;
 using MaktabTaha.Application.DTO_s.initialRequests.List;
 using MaktabTaha.Domain.Entites.BaseEntities;
 using MaktabTaha.Application.DTOs.BaseEntities.Area.List;
+using MaktabTaha.Application.DTOs.BaseEntities.City.List;
+using MaktabTaha.Application.DTOs.BaseEntities.Province.List;
 
 namespace MaktabTaha.Application.Profiles
 {
@@ -69,6 +71,12 @@ namespace MaktabTaha.Application.Profiles
 
             //Area
             CreateMap<Area, AreaListDTO>();
+
+
+            CreateMap<City, CityListDTO>();
+
+
+            CreateMap<Province, ProvinceListDTO>();
 
         }
     }

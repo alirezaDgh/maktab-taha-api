@@ -20,7 +20,7 @@ namespace MaktabTaha.Domain.Entites
         public string ClientLastName { get; set; }
 
         public int HouseHeadStatusId { get; set; }
-        public HouseHeadStatusDesc houseHeadStatus { get; set; }
+        public HouseHeadStatus houseHeadStatus { get; set; }
 
         public string Gender { get; set; }
 

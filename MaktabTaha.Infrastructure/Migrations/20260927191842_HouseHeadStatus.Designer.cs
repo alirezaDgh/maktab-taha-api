@@ -4,6 +4,7 @@ using MaktabTaha.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MaktabTaha.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260927191842_HouseHeadStatus")]
+    partial class HouseHeadStatus
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -317,7 +320,7 @@ namespace MaktabTaha.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("HouseHeadStatus");
+                    b.ToTable("HouseHeadStatu");
                 });
 
             modelBuilder.Entity("MaktabTaha.Domain.Entites.BaseEntities.HousingStatus", b =>
@@ -346,7 +349,7 @@ namespace MaktabTaha.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("HousingStatus");
+                    b.ToTable("HousingStatu");
                 });
 
             modelBuilder.Entity("MaktabTaha.Domain.Entites.BaseEntities.Job", b =>

@@ -22,7 +22,7 @@ namespace MaktabTaha.Infrastructure
             services.AddTransient<IPermissionRepository, PermissionRepository>();
             services.AddTransient<IRolePermissionRepository, RolePermissionRepository>();
             services.AddTransient<IRoleRepository, RoleRepository>();
-            services.AddTransient<IInitialRequestRepository, InitialRequestRepository>();
+            services.AddTransient<IRequestRepository, RequestRepository>();
 
             
             services.AddScoped<ITokenServices, TokenService>();

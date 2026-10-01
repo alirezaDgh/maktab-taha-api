@@ -1,4 +1,5 @@
-﻿using MaktabTaha.Domain.Entites;
+﻿using Azure.Core;
+using MaktabTaha.Domain.Entites;
 using MaktabTaha.Domain.Entites.BaseEntities;
 
 using Microsoft.EntityFrameworkCore;
@@ -11,7 +12,7 @@ namespace MaktabTaha.Infrastructure
         public DbSet<Role> Role { get; set; }
         public DbSet<Permission> Permission { get; set; }
         public DbSet<RolePermission> RolePermission { get; set; }
-        public DbSet<InitialRequest> InitialRequest { get; set; }
+        public DbSet<Domain.Entites.Request> Request { get; set; }
         public DbSet<Area> Area { get; set; }
         public DbSet<Bank> Bank { get; set; }
         public DbSet<CaseType> CaseType { get; set; }

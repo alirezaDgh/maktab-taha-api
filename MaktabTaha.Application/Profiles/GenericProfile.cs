@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using MaktabTaha.Application.DTO_s.initialRequests.List;
+using MaktabTaha.Application.DTO_s.Requests.List;
 using MaktabTaha.Application.DTO_s.users.list;
 using MaktabTaha.Application.DTO_s.users.single;
-using MaktabTaha.Application.Features.initialRequest.Command.Approve;
-using MaktabTaha.Application.Features.initialRequest.Command.Create;
-using MaktabTaha.Application.Features.initialRequest.Command.Update;
+using MaktabTaha.Application.Features.request.Command.Approve;
+using MaktabTaha.Application.Features.request.Command.Create;
+using MaktabTaha.Application.Features.request.Command.Update;
 using MaktabTaha.Application.Features.permission.Command.Create;
 using MaktabTaha.Application.Features.permission.Command.Delete;
 using MaktabTaha.Application.Features.permission.Command.Update;
@@ -50,11 +50,11 @@ namespace MaktabTaha.Application.Profiles
             CreateMap<DeleteRolePermissionCommand, RolePermission>();
 
             //InitialRequest
-            CreateMap<CreateInitialRequestCommand, InitialRequest>();
-            CreateMap<UpdateInitialRequestCommand, InitialRequest>();
-            CreateMap<InitialRequest, InitialRequestListDTO>();
-            CreateMap<InitialRequest, GetUserDTO>();
-            CreateMap<ApproveInitialRequestCommand, InitialRequest>()
+            CreateMap<CreateRequestCommand, Request>();
+            CreateMap<UpdateRequestCommand, Request>();
+            CreateMap<Request, RequestListDTO>();
+            CreateMap<Request, GetUserDTO>();
+            CreateMap<ApproveRequestCommand, Request>()
                 .ForMember(dest => dest.Id, opt => opt.Ignore())
                 .ForMember(dest => dest.Attachment, opt => opt.Ignore());
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MaktabTaha.Domain.Entites
 {
-    public class InitialRequest : BaseEntity<int>
+    public class  InitialRequest : BaseEntity<int>
     {
         public DateTime RequestDate { get; set; }
         public string RequestDescription { get; set; }

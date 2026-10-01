@@ -1,4 +1,5 @@
 ﻿using MaktabTaha.Application.DTO_s.users.list;
+using MaktabTaha.Application.DTO_s.users.single;
 using MaktabTaha.Application.Interfaces.Repositories;
 using MaktabTaha.Domain.Entites;
 using Microsoft.EntityFrameworkCore;
@@ -96,6 +97,53 @@ namespace MaktabTaha.Infrastructure.Repositories
                 }
             }).ToList();
         }
+
+        public async Task<GetUserDTO?> GetUser(int id)
+        {
+            var user = await _context.User
+                .AsNoTracking()
+                .Include(x => x.Role)
+                    .ThenInclude(x => x.RolePermissions)
+                        .ThenInclude(x => x.Permission)
+                .SingleOrDefaultAsync(x => x.Id == id);
+
+            if (user == null)
+                return null;
+
+            return new GetUserDTO
+            {
+                Id = user.Id,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                UserName = user.UserName,
+                Mobile = user.Mobile,
+
+                Role = new UserRoleDTO
+                {
+                    RoleId = user.RoleId,
+                    RoleTitle = user.Role.Title,
+
+                    Permissions = BuildPermissionTree(
+                        user.Role.RolePermissions
+                            .Select(x => x.Permission)
+                            .ToList()
+                    )
+                }
+            };
+        }
+        public async Task<User?> GetUserForLogin(
+        string userName)
+        {
+            return await _context.User
+                .Include(x => x.Role)
+                    .ThenInclude(x => x.RolePermissions)
+                        .ThenInclude(x => x.Permission)
+                .SingleOrDefaultAsync(
+                    x => x.UserName == userName
+                );
+        }
+
     }
+
 }
 

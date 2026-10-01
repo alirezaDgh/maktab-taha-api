@@ -21,7 +21,7 @@ namespace MaktabTaha.Application.Features.user.Query.single
         public async Task<OperationResult<GetUserDTO>> Handle(GetUserByIdCommand request, CancellationToken cancellationToken)
         {
             var operation = new OperationResult<GetUserDTO>();
-            var user = await _repository.GetBy(request.Id);
+            var user = await _repository.GetUser(request.Id);
 
             if(user == null)
             {

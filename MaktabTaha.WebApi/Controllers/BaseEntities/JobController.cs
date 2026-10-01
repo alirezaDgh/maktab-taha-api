@@ -1,4 +1,4 @@
-﻿using MaktabTaha.Application.Features.BaseEntities.Job;
+﻿using MaktabTaha.Application.Features.BaseEntities.job.Query.List;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MaktabTaha.WebApi.Controllers.BaseEntities;

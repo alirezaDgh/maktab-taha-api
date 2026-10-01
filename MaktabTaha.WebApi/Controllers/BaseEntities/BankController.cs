@@ -1,4 +1,5 @@
-﻿using MaktabTaha.Application.Features.BaseEntities.Bank;
+﻿using MaktabTaha.Application.Features.BaseEntities.bank;
+using MaktabTaha.Application.Features.BaseEntities.bank.Query.List;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MaktabTaha.WebApi.Controllers.BaseEntities;

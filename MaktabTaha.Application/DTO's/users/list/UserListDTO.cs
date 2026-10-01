@@ -14,7 +14,7 @@ namespace MaktabTaha.Application.DTO_s.users.list
         public string UserName { get; set; } = null!;
         public string Mobile { get; set; } = null!;
         public DateTime? LastEntry { get; set; }
-        public bool IsActive { get; set; }
+        public bool IsActive { get; set; }  
         public UserRoleDTO Role { get; set; } = null!;
 
     }

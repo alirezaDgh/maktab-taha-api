@@ -7,7 +7,7 @@ namespace MaktabTaha.Application.Interfaces.Repositories
     public interface IUserRepository : IGenericRepository<int, User>
     {
         Task<List<UserListDTO>> GetAllList();
-        Task<GetUserDTO> GetUser(int id);
+        Task<SingleUserDTO> GetUser(int id);
         Task<User> GetUserForLogin(string userName);
     }
 }

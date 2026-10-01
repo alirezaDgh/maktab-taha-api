@@ -712,7 +712,61 @@ namespace MaktabTaha.Infrastructure.Migrations
                     b.ToTable("Donor");
                 });
 
-            modelBuilder.Entity("MaktabTaha.Domain.Entites.InitialRequest", b =>
+            modelBuilder.Entity("MaktabTaha.Domain.Entites.Permission", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Icon")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Key")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<int?>("ParentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Path")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Key")
+                        .IsUnique();
+
+                    b.HasIndex("ParentId");
+
+                    b.ToTable("Permissions", (string)null);
+                });
+
+            modelBuilder.Entity("MaktabTaha.Domain.Entites.Request", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -820,61 +874,7 @@ namespace MaktabTaha.Infrastructure.Migrations
 
                     b.HasIndex("RequestTypeId");
 
-                    b.ToTable("InitialRequest");
-                });
-
-            modelBuilder.Entity("MaktabTaha.Domain.Entites.Permission", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Icon")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Key")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<int?>("ParentId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Path")
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
-
-                    b.Property<int>("SortOrder")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Key")
-                        .IsUnique();
-
-                    b.HasIndex("ParentId");
-
-                    b.ToTable("Permissions", (string)null);
+                    b.ToTable("Request");
                 });
 
             modelBuilder.Entity("MaktabTaha.Domain.Entites.Role", b =>
@@ -999,33 +999,43 @@ namespace MaktabTaha.Infrastructure.Migrations
                     b.Navigation("province");
                 });
 
-            modelBuilder.Entity("MaktabTaha.Domain.Entites.InitialRequest", b =>
+            modelBuilder.Entity("MaktabTaha.Domain.Entites.Permission", b =>
                 {
-                    b.HasOne("MaktabTaha.Domain.Entites.BaseEntities.Area", "area")
+                    b.HasOne("MaktabTaha.Domain.Entites.Permission", "Parent")
+                        .WithMany("Children")
+                        .HasForeignKey("ParentId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Parent");
+                });
+
+            modelBuilder.Entity("MaktabTaha.Domain.Entites.Request", b =>
+                {
+                    b.HasOne("MaktabTaha.Domain.Entites.BaseEntities.Area", "Area")
                         .WithMany()
                         .HasForeignKey("AreaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MaktabTaha.Domain.Entites.BaseEntities.City", "city")
+                    b.HasOne("MaktabTaha.Domain.Entites.BaseEntities.City", "City")
                         .WithMany()
                         .HasForeignKey("CityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MaktabTaha.Domain.Entites.BaseEntities.HouseHeadStatus", "houseHeadStatus")
+                    b.HasOne("MaktabTaha.Domain.Entites.BaseEntities.HouseHeadStatus", "HouseHeadStatus")
                         .WithMany()
                         .HasForeignKey("HouseHeadStatusId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MaktabTaha.Domain.Entites.BaseEntities.Nationalty", "nationalty")
+                    b.HasOne("MaktabTaha.Domain.Entites.BaseEntities.Nationalty", "Nationalty")
                         .WithMany()
                         .HasForeignKey("NationaltyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MaktabTaha.Domain.Entites.BaseEntities.Province", "province")
+                    b.HasOne("MaktabTaha.Domain.Entites.BaseEntities.Province", "Province")
                         .WithMany()
                         .HasForeignKey("ProvinceId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1037,43 +1047,33 @@ namespace MaktabTaha.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MaktabTaha.Domain.Entites.BaseEntities.Religon", "religon")
+                    b.HasOne("MaktabTaha.Domain.Entites.BaseEntities.Religon", "Religon")
                         .WithMany()
                         .HasForeignKey("ReligonId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MaktabTaha.Domain.Entites.BaseEntities.RequestType", "requestType")
+                    b.HasOne("MaktabTaha.Domain.Entites.BaseEntities.RequestType", "RequestType")
                         .WithMany()
                         .HasForeignKey("RequestTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("Area");
+
+                    b.Navigation("City");
+
+                    b.Navigation("HouseHeadStatus");
+
+                    b.Navigation("Nationalty");
+
+                    b.Navigation("Province");
+
                     b.Navigation("Referer");
 
-                    b.Navigation("area");
+                    b.Navigation("Religon");
 
-                    b.Navigation("city");
-
-                    b.Navigation("houseHeadStatus");
-
-                    b.Navigation("nationalty");
-
-                    b.Navigation("province");
-
-                    b.Navigation("religon");
-
-                    b.Navigation("requestType");
-                });
-
-            modelBuilder.Entity("MaktabTaha.Domain.Entites.Permission", b =>
-                {
-                    b.HasOne("MaktabTaha.Domain.Entites.Permission", "Parent")
-                        .WithMany("Children")
-                        .HasForeignKey("ParentId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.Navigation("Parent");
+                    b.Navigation("RequestType");
                 });
 
             modelBuilder.Entity("MaktabTaha.Domain.Entites.RolePermission", b =>

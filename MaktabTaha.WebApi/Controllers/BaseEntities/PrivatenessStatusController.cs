@@ -1,4 +1,4 @@
-﻿using MaktabTaha.Application.Features.BaseEntities.PrivatenessStatus;
+﻿using MaktabTaha.Application.Features.BaseEntities.privatenessStatus.Query.List;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MaktabTaha.WebApi.Controllers.BaseEntities;

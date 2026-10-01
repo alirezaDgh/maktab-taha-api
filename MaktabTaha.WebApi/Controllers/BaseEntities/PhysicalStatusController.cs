@@ -1,4 +1,4 @@
-﻿using MaktabTaha.Application.Features.BaseEntities.PhysicalStatus;
+﻿using MaktabTaha.Application.Features.BaseEntities.physicalStatus.Query.List;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MaktabTaha.WebApi.Controllers.BaseEntities;

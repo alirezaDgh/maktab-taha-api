@@ -1,7 +1,4 @@
-﻿
-using MaktabTaha.Application.DTOs.BaseEntities.City.List;
-using MaktabTaha.Application.Interfaces;
-using MaktabTaha.Application.Interfaces.Repositories.BaseEntities;
+﻿using MaktabTaha.Application.Interfaces.Repositories.BaseEntities;
 using MaktabTaha.Domain.Entites.BaseEntities;
 using Microsoft.EntityFrameworkCore;
 

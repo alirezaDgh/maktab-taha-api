@@ -1,10 +1,4 @@
-﻿using MaktabTaha.Application.DTOs.BaseEntities.City.List;
-using MaktabTaha.Domain.Entites.BaseEntities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MaktabTaha.Domain.Entites.BaseEntities;
 
 namespace MaktabTaha.Application.Interfaces.Repositories.BaseEntities
 {

@@ -1,4 +1,5 @@
-﻿using MaktabTaha.Application.Features.BaseEntities.EducationStatus;
+﻿using MaktabTaha.Application.Features.BaseEntities.educationStatus;
+using MaktabTaha.Application.Features.BaseEntities.educationStatus.Query.List;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MaktabTaha.WebApi.Controllers.BaseEntities;

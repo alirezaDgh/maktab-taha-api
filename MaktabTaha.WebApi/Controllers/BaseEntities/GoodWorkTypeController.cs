@@ -1,4 +1,5 @@
-﻿using MaktabTaha.Application.Features.BaseEntities.GoodWorkType;
+﻿using MaktabTaha.Application.Features.BaseEntities.goodWorkType;
+using MaktabTaha.Application.Features.BaseEntities.goodWorkType.Query.List;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MaktabTaha.WebApi.Controllers.BaseEntities;

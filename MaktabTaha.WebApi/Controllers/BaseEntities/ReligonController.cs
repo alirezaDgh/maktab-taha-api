@@ -1,4 +1,4 @@
-﻿using MaktabTaha.Application.Features.BaseEntities.Religon;
+﻿using MaktabTaha.Application.Features.BaseEntities.religon.Query.List;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MaktabTaha.WebApi.Controllers.BaseEntities;

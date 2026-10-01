@@ -1,4 +1,5 @@
-﻿using MaktabTaha.Application.Features.BaseEntities.CharityMainRole;
+﻿using MaktabTaha.Application.Features.BaseEntities.charityMainRole;
+using MaktabTaha.Application.Features.BaseEntities.charityMainRole.Query.List;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MaktabTaha.WebApi.Controllers.BaseEntities;

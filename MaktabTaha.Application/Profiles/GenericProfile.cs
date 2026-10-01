@@ -2,28 +2,6 @@
 using MaktabTaha.Application.DTO_s.initialRequests.List;
 using MaktabTaha.Application.DTO_s.users.list;
 using MaktabTaha.Application.DTO_s.users.single;
-using MaktabTaha.Application.DTOs.BaseEntities.Area.List;
-using MaktabTaha.Application.DTOs.BaseEntities.Bank.List;
-using MaktabTaha.Application.DTOs.BaseEntities.CaseType.List;
-using MaktabTaha.Application.DTOs.BaseEntities.CharityMainRole.List;
-using MaktabTaha.Application.DTOs.BaseEntities.City.List;
-using MaktabTaha.Application.DTOs.BaseEntities.EducationLevel.List;
-using MaktabTaha.Application.DTOs.BaseEntities.EducationStatus.List;
-using MaktabTaha.Application.DTOs.BaseEntities.EmploymentStatus.List;
-using MaktabTaha.Application.DTOs.BaseEntities.GoodWorkType.List;
-using MaktabTaha.Application.DTOs.BaseEntities.HouseHeadStatus.List;
-using MaktabTaha.Application.DTOs.BaseEntities.HousingStatus.List;
-using MaktabTaha.Application.DTOs.BaseEntities.Job.List;
-using MaktabTaha.Application.DTOs.BaseEntities.Nationality.List;
-using MaktabTaha.Application.DTOs.BaseEntities.OrphanStatus.List;
-using MaktabTaha.Application.DTOs.BaseEntities.PhysicalStatus.List;
-using MaktabTaha.Application.DTOs.BaseEntities.PrivatenessStatus.List;
-using MaktabTaha.Application.DTOs.BaseEntities.Province.List;
-using MaktabTaha.Application.DTOs.BaseEntities.Relation.List;
-using MaktabTaha.Application.DTOs.BaseEntities.Religon.List;
-using MaktabTaha.Application.DTOs.BaseEntities.RequestType.List;
-using MaktabTaha.Application.DTOs.BaseEntities.Skill.List;
-using MaktabTaha.Application.DTOs.BaseEntities.UnemploymentReason.List;
 using MaktabTaha.Application.Features.initialRequest.Command.Approve;
 using MaktabTaha.Application.Features.initialRequest.Command.Create;
 using MaktabTaha.Application.Features.initialRequest.Command.Update;
@@ -86,53 +64,7 @@ namespace MaktabTaha.Application.Profiles
             CreateMap<DeleteRoleCommand, Role>();
 
 
-            //Base Entities
-
-
-            CreateMap<Area, AreaListDTO>();
-
-            CreateMap<Bank, BankListDTO>();
-
-            CreateMap<CaseType, CaseTypeListDTO>();
-
-            CreateMap<CharityMainRole, CharityMainRoleListDTO>();
-
-            CreateMap<City, CityListDTO>();
-
-            CreateMap<EducationLevel, EducationLevelListDTO>();
-
-            CreateMap<EducationStatus, EducationStatusListDTO>();
-
-            CreateMap<EmploymentStatus, EmploymentStatusListDTO>();
-
-            CreateMap<GoodWorkType, GoodWorkTypeListDTO>();
-
-            CreateMap<HouseHeadStatus, HouseHeadStatusListDTO>();
-
-            CreateMap<HousingStatus, HousingStatusListDTO>();
-
-            CreateMap<Job, JobListDTO>();
-
-            CreateMap<Nationalty, NationalityListDTO>();
-
-            CreateMap<OrphanStatus, OrphanStatusListDTO>();
-
-            CreateMap<PhysicalStatus, PhysicalStatusListDTO>();
-
-            CreateMap<PrivatenessStatus, PrivatenessStatusListDTO>();
-
-            CreateMap<Province, ProvinceListDTO>();
-
-            CreateMap<Relation, RelationListDTO>();
-
-            CreateMap<Religon, ReligonListDTO>();
-
-            CreateMap<RequestType, RequestTypeListDTO>();
-
-            CreateMap<Skill, SkillListDTO>();
-
-            CreateMap<UnemploymentReason, UnemploymentReasonListDTO>();
-
+            
         }
     }
 }

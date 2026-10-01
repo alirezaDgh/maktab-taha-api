@@ -1,4 +1,5 @@
-﻿using MaktabTaha.Application.Features.BaseEntities.EmploymentStatus;
+﻿using MaktabTaha.Application.Features.BaseEntities.employmentStatus;
+using MaktabTaha.Application.Features.BaseEntities.employmentStatus.Query.List;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MaktabTaha.WebApi.Controllers.BaseEntities;

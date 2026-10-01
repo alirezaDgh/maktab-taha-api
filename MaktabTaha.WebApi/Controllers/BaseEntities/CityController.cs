@@ -1,5 +1,4 @@
-﻿using MaktabTaha.Application.Features.BaseEntities.City;
-using MaktabTaha.Application.Features.role.Query.single;
+﻿using MaktabTaha.Application.Features.BaseEntities.city.Query.List;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MaktabTaha.WebApi.Controllers.BaseEntities;

@@ -1,4 +1,4 @@
-﻿using MaktabTaha.Application.Features.BaseEntities.OrphanStatus;
+﻿using MaktabTaha.Application.Features.BaseEntities.orphanStatus.Query.List;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MaktabTaha.WebApi.Controllers.BaseEntities;

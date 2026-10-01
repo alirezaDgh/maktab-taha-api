@@ -42,13 +42,13 @@ namespace MaktabTaha.Infrastructure.Mapping.initialRequest
             builder.Property(x => x.Attachment);
 
             // RequestType
-            builder.HasOne(x => x.requestType)
+            builder.HasOne(x => x.RequestType)
                    .WithMany()
                    .HasForeignKey(x => x.RequestTypeId)
                    .OnDelete(DeleteBehavior.Cascade);
 
             // HouseHeadStatus
-            builder.HasOne(x => x.houseHeadStatus)
+            builder.HasOne(x => x.HouseHeadStatus)
                    .WithMany()
                    .HasForeignKey(x => x.HouseHeadStatusId)
                    .OnDelete(DeleteBehavior.Cascade);
@@ -60,31 +60,31 @@ namespace MaktabTaha.Infrastructure.Mapping.initialRequest
                    .OnDelete(DeleteBehavior.Cascade);
 
             // Nationalty
-            builder.HasOne(x => x.nationalty)
+            builder.HasOne(x => x.Nationalty)
                    .WithMany()
                    .HasForeignKey(x => x.NationaltyId)
                    .OnDelete(DeleteBehavior.Cascade);
 
             // Province
-            builder.HasOne(x => x.province)
+            builder.HasOne(x => x.Province)
                    .WithMany()
                    .HasForeignKey(x => x.ProvinceId)
                    .OnDelete(DeleteBehavior.Cascade);
 
             // City
-            builder.HasOne(x => x.city)
+            builder.HasOne(x => x.City)
                    .WithMany()
                    .HasForeignKey(x => x.CityId)
                    .OnDelete(DeleteBehavior.Cascade);
 
             // Area
-            builder.HasOne(x => x.area)
+            builder.HasOne(x => x.Area)
                    .WithMany()
                    .HasForeignKey(x => x.AreaId)
                    .OnDelete(DeleteBehavior.Cascade);
 
             // Religon
-            builder.HasOne(x => x.religon)
+            builder.HasOne(x => x.Religon)
                    .WithMany()
                    .HasForeignKey(x => x.ReligonId)
                    .OnDelete(DeleteBehavior.Cascade);

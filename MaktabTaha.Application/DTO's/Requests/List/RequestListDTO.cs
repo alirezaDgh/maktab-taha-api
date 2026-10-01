@@ -9,8 +9,6 @@ namespace MaktabTaha.Application.DTO_s.Requests.List
     public class RequestListDTO
     {
         public int Id { get; set; }
-
-        public string RequestNumber { get; set; }
         public DateTime RequestDate { get; set; }
         public string RequestDescription { get; set; }
 

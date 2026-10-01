@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MaktabTaha.Application.DTO_s.users.single
 {
-    internal class GetUserDTO
+    public class SingleUserDTO
     {
     }
 }

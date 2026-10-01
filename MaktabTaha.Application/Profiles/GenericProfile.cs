@@ -37,7 +37,7 @@ namespace MaktabTaha.Application.Profiles
             CreateMap<AuthViewModel, User>();
 
             CreateMap<User, UserListDTO>();
-            CreateMap<User, GetUserDTO>();
+            CreateMap<User, SingleUserDTO>();
 
             //PERMISSION
             CreateMap<CreatePermissionCommand, Permission>();
@@ -53,7 +53,7 @@ namespace MaktabTaha.Application.Profiles
             CreateMap<CreateRequestCommand, Request>();
             CreateMap<UpdateRequestCommand, Request>();
             CreateMap<Request, RequestListDTO>();
-            CreateMap<Request, GetUserDTO>();
+            CreateMap<Request, SingleUserDTO>();
             CreateMap<ApproveRequestCommand, Request>()
                 .ForMember(dest => dest.Id, opt => opt.Ignore())
                 .ForMember(dest => dest.Attachment, opt => opt.Ignore());

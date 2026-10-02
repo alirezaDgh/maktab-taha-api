@@ -19,6 +19,7 @@ using MaktabTaha.Application.Features.user.Command.delete;
 using MaktabTaha.Application.Features.user.Command.update;
 using MaktabTaha.Domain.Common;
 using MaktabTaha.Domain.Entites;
+using MaktabTaha.Application.DTO_s.Requests.Single;
 
 namespace MaktabTaha.Application.Profiles
 {
@@ -52,7 +53,7 @@ namespace MaktabTaha.Application.Profiles
             CreateMap<CreateRequestCommand, Request>();
             CreateMap<UpdateRequestCommand, Request>();
             CreateMap<Request, RequestListDTO>();
-            CreateMap<Request, SingleUserDTO>();
+            CreateMap<Request, SingleRequestDTO>();
             CreateMap<ApproveRequestCommand, Request>()
                 .ForMember(dest => dest.Id, opt => opt.Ignore())
                 .ForMember(dest => dest.Attachment, opt => opt.Ignore());

@@ -7,6 +7,7 @@ using MaktabTaha.Application.Features.request.Query.Single;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Numerics;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace MaktabTaha.WebApi.Controllers
 {
@@ -38,12 +39,9 @@ namespace MaktabTaha.WebApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetRequestById(int id, GetRequestByIdCommand command)
+        public async Task<IActionResult> GetRequestById(int id)
         {
-            if (id != command.Id) 
-                return BadRequest();
-
-            return Ok(await Mediator.Send(command));
+            return Ok(await Mediator.Send(new GetRequestByIdCommand { Id = id }));
         }
 
         [HttpDelete("{id}")]

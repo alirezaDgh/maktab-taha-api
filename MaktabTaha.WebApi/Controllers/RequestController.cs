@@ -1,4 +1,5 @@
-﻿using MaktabTaha.Application.Features.request.Command.Approve;
+﻿using MaktabTaha.Application.DTO_s.Requests.Search;
+using MaktabTaha.Application.Features.request.Command.Approve;
 using MaktabTaha.Application.Features.request.Command.Create;
 using MaktabTaha.Application.Features.request.Command.Delete;
 using MaktabTaha.Application.Features.request.Command.Update;
@@ -32,9 +33,13 @@ namespace MaktabTaha.WebApi.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllRequests()
+        public async Task<IActionResult> GetAllRequests([FromQuery] SearchRequestListDTO filters)
         {
-            var request = await Mediator.Send(new GetRequestListCommand());
+            var request = await Mediator.Send(new GetRequestListCommand{
+
+                Filters = filters
+            });
+
             return Ok(request);
         }
 

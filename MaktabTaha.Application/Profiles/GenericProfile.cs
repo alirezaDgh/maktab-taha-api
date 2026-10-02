@@ -52,7 +52,67 @@ namespace MaktabTaha.Application.Profiles
             //InitialRequest
             CreateMap<CreateRequestCommand, Request>();
             CreateMap<UpdateRequestCommand, Request>();
-            CreateMap<Request, RequestListDTO>();
+            CreateMap<Request, RequestListDTO>()
+                .ForMember(
+                    dest => dest.RequestTypeTitle,
+                    opt => opt.MapFrom(src => src.RequestType != null
+                        ? src.RequestType.RequestTypeName
+                        : null)
+                )
+                .ForMember(
+                    dest => dest.HouseHeadStatusTitle,
+                    opt => opt.MapFrom(src => src.HouseHeadStatus != null
+                        ? src.HouseHeadStatus.Name
+                        : null)
+                )
+                .ForMember(
+                    dest => dest.RefererName,
+                    opt => opt.MapFrom(src => src.Referer != null
+                        ? $"{src.Referer.Firstname} {src.Referer.Lastname}"
+                        : null)
+                )
+                .ForMember(
+                    dest => dest.NationaltyTitle,
+                    opt => opt.MapFrom(src => src.Nationalty != null
+                        ? src.Nationalty.NationalityName
+                        : null)
+                )
+                .ForMember(
+                    dest => dest.ProvinceTitle,
+                    opt => opt.MapFrom(src => src.Province != null
+                        ? src.Province.ProvinceName
+                        : null)
+                )
+                .ForMember(
+                    dest => dest.CityTitle,
+                    opt => opt.MapFrom(src => src.City != null
+                        ? src.City.CityName
+                        : null)
+                )
+                .ForMember(
+                    dest => dest.AreaTitle,
+                    opt => opt.MapFrom(src => src.Area != null
+                        ? src.Area.AreaName
+                        : null)
+                )
+                .ForMember(
+                    dest => dest.ReligonTitle,
+                    opt => opt.MapFrom(src => src.Religon != null
+                        ? src.Religon.ReligonName
+                        : null)
+                )
+                .ForMember(
+                    dest => dest.RequestStatusTitle,
+                    opt => opt.MapFrom(src => src.RequestStatus != null
+                        ? src.RequestStatus.RequestStatusName
+                        : null)
+                )
+                .ForMember(
+                    dest => dest.FullName,
+                    opt => opt.MapFrom(src =>
+                        $"{src.ClientFirstName} {src.ClientLastName}".Trim()
+                    )
+                ); 
             CreateMap<Request, SingleRequestDTO>();
             CreateMap<ApproveRequestCommand, Request>()
                 .ForMember(dest => dest.Id, opt => opt.Ignore())

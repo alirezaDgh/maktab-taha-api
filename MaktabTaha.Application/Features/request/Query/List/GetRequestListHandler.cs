@@ -21,8 +21,9 @@ namespace MaktabTaha.Application.Features.request.Query.List
         {
             var operation = new OperationResult<List<RequestListDTO>>();
 
-            var initialRequests = await _repository.ListWithoutIsDeleted();
-            var mappedData = _mapper.Map<List<RequestListDTO>>(initialRequests);
+            var filterRequest = await _repository.SearchRequest(request.Filters);
+            var mappedData = _mapper.Map<List<RequestListDTO>>(filterRequest);
+            
             return operation.Succedded(mappedData);
         }
     }

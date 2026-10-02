@@ -9,21 +9,19 @@ namespace MaktabTaha.Application.Features.request.Query.List
     public class GetRequestListHandler : IRequestHandler<GetRequestListCommand, OperationResult<List<RequestListDTO>>>
     {
         private readonly IRequestRepository _repository;
-        private readonly IMapper _mapper;
 
-        public GetRequestListHandler(IRequestRepository repository, IMapper mapper)
+        public GetRequestListHandler(IRequestRepository repository)
         {
             _repository = repository;
-            _mapper = mapper;
         }
 
         public async Task<OperationResult<List<RequestListDTO>>> Handle(GetRequestListCommand request, CancellationToken cancellationToken)
         {
             var operation = new OperationResult<List<RequestListDTO>>();
 
-            var initialRequests = await _repository.ListWithoutIsDeleted();
-            var mappedData = _mapper.Map<List<RequestListDTO>>(initialRequests);
-            return operation.Succedded(mappedData);
+            var filterRequest = await _repository.SearchRequest(request.Filters);
+            
+            return operation.Succedded(filterRequest);
         }
     }
 }

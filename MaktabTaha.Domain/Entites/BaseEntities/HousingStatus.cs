@@ -9,6 +9,6 @@ namespace MaktabTaha.Domain.Entites.BaseEntities
 {
     public class HousingStatus : BaseEntity<int>
     {
-        public string Title { get; set; }
+        public string HousingStatusName { get; set; }
     }
 }

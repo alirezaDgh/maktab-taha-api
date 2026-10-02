@@ -14,7 +14,8 @@ namespace MaktabTaha.Infrastructure.Mapping.baseEntities
         public void Configure(EntityTypeBuilder<Province> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Title);
+            builder.HasIndex(x => x.ProvinceCode).IsUnique();
+            builder.Property(x => x.ProvinceName);
         }
     }
 }

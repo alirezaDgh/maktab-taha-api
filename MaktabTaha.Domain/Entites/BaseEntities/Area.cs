@@ -9,6 +9,6 @@ namespace MaktabTaha.Domain.Entites.BaseEntities
 {
     public class Area : BaseEntity<int>
     {
-        public string Title { get; set; }
+        public string AreaName { get; set; }
     }
 }

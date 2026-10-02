@@ -37,7 +37,8 @@ namespace MaktabTaha.Application.DTO_s.Requests.List
         public int ReligonId { get; set; }
 
         //Approve
-        public string Status { get; set; }
+        public int RequestStatusId { get; set; }
+
         public string StatusReason { get; set; }
         public DateTime ApproveDate { get; set; }
         public string OfficerDescription { get; set; }

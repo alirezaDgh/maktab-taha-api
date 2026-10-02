@@ -28,7 +28,7 @@ namespace MaktabTaha.Domain.Entites
         public Donor Referer { get; set; }
 
         public int NationaltyId { get; set; }
-        public Nationalty Nationalty { get; set; }
+        public Nationality Nationalty { get; set; }
 
         public int ProvinceId { get; set; }
         public Province Province { get; set; }
@@ -47,7 +47,8 @@ namespace MaktabTaha.Domain.Entites
         public Religon Religon { get; set; }
 
         // Approve
-        public string? Status { get; set; }
+        public int RequestStatusId { get; set; }
+        public RequestStatus RequestStatus { get; set; }
         public string? StatusReason { get; set; }
         public DateTime? ApproveDate { get; set; }
         public string? OfficerDescription { get; set; }

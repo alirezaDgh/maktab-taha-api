@@ -9,7 +9,8 @@ namespace MaktabTaha.Domain.Entites.BaseEntities
 {
     public class City : BaseEntity<int>
     {
-        public string Title { get; set; }
+        public int CityCode { get; set; }
+        public string CityName { get; set; }
         public int ProvinceId { get; set; }
         public Province province { get; set; }
     }

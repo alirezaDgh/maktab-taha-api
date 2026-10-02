@@ -9,6 +9,6 @@ namespace MaktabTaha.Domain.Entites.BaseEntities
 {
     public class PrivatenessStatus : BaseEntity<int>
     {
-        public string Title { get; set; }
+        public string PrivatenessStatusName { get; set; }
     }
 }

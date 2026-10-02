@@ -9,6 +9,6 @@ namespace MaktabTaha.Domain.Entites.BaseEntities
 {
     public class UnemploymentReason : BaseEntity<int>
     {
-        public string Title { get; set; }
+        public string UnemploymentReasonName { get; set; }
     }
 }

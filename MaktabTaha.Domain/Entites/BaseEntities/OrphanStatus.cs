@@ -9,6 +9,6 @@ namespace MaktabTaha.Domain.Entites.BaseEntities
 {
     public class OrphanStatus : BaseEntity<int>
     {
-        public string Title { get; set; }
+        public string OrphanStatusName { get; set; }
     }
 }

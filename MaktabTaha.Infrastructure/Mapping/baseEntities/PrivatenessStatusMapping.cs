@@ -14,7 +14,7 @@ namespace MaktabTaha.Infrastructure.Mapping.baseEntities
         public void Configure(EntityTypeBuilder<PrivatenessStatus> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Title);
+            builder.Property(x => x.PrivatenessStatusName);
         }
     }
 }

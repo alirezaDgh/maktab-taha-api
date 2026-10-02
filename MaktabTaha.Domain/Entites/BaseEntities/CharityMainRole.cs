@@ -9,6 +9,6 @@ namespace MaktabTaha.Domain.Entites.BaseEntities
 {
     public class CharityMainRole : BaseEntity<int>
     {
-        public string Title { get; set; }
+        public string CharityMainRoleName { get; set; }
     }
 }

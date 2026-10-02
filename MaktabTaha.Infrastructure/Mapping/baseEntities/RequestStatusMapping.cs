@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace MaktabTaha.Infrastructure.Mapping.baseEntities
 {
-    public class BankMapping : IEntityTypeConfiguration<Bank>
+    public class RequestStatusMapping : IEntityTypeConfiguration<RequestStatus>
     {
-        public void Configure(EntityTypeBuilder<Bank> builder)
+        public void Configure(EntityTypeBuilder<RequestStatus> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.BankName);
+            builder.Property(x => x.RequestStatusName);
         }
     }
 }

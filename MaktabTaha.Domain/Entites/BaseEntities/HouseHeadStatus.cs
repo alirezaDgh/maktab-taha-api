@@ -4,7 +4,7 @@ namespace MaktabTaha.Domain.Entites.BaseEntities
 {
     public class HouseHeadStatus : BaseEntity<int>
     {
-        public string Title { get; set; }
+        public string Name { get; set; }
         public int HHType { get; set; }
     }
 }

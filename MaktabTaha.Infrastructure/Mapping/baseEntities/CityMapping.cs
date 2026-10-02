@@ -14,7 +14,8 @@ namespace MaktabTaha.Infrastructure.Mapping.baseEntities
         public void Configure(EntityTypeBuilder<City> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Title);
+            builder.Property(x => x.CityName);
+            builder.HasIndex(x => x.CityCode).IsUnique();
             builder.Property(x => x.ProvinceId);
             builder.HasOne(x => x.province)
                 .WithMany(x => x.cities)

@@ -31,7 +31,6 @@ namespace MaktabTaha.Infrastructure.Mapping.initialRequest
 
             builder.Property(x => x.HomeNumber);
 
-            builder.Property(x => x.Status);
 
             builder.Property(x => x.StatusReason);
 
@@ -88,6 +87,12 @@ namespace MaktabTaha.Infrastructure.Mapping.initialRequest
                    .WithMany()
                    .HasForeignKey(x => x.ReligonId)
                    .OnDelete(DeleteBehavior.Cascade);
+
+            // RequestStatus
+            builder.HasOne(x => x.RequestStatus)
+                .WithMany()
+                .HasForeignKey(x => x.RequestStatusId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

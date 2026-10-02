@@ -4,6 +4,7 @@ using MaktabTaha.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MaktabTaha.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20261002093646_TitleToNameAndCode")]
+    partial class TitleToNameAndCode
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -593,35 +596,6 @@ namespace MaktabTaha.Infrastructure.Migrations
                     b.ToTable("Religon");
                 });
 
-            modelBuilder.Entity("MaktabTaha.Domain.Entites.BaseEntities.RequestStatus", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("RequestStatusName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("RequestStatus");
-                });
-
             modelBuilder.Entity("MaktabTaha.Domain.Entites.BaseEntities.RequestType", b =>
                 {
                     b.Property<int>("Id")
@@ -885,11 +859,11 @@ namespace MaktabTaha.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RequestStatusId")
-                        .HasColumnType("int");
-
                     b.Property<int>("RequestTypeId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("StatusReason")
                         .HasColumnType("nvarchar(max)");
@@ -912,8 +886,6 @@ namespace MaktabTaha.Infrastructure.Migrations
                     b.HasIndex("RefererId");
 
                     b.HasIndex("ReligonId");
-
-                    b.HasIndex("RequestStatusId");
 
                     b.HasIndex("RequestTypeId");
 
@@ -1096,12 +1068,6 @@ namespace MaktabTaha.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MaktabTaha.Domain.Entites.BaseEntities.RequestStatus", "RequestStatus")
-                        .WithMany()
-                        .HasForeignKey("RequestStatusId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("MaktabTaha.Domain.Entites.BaseEntities.RequestType", "RequestType")
                         .WithMany()
                         .HasForeignKey("RequestTypeId")
@@ -1121,8 +1087,6 @@ namespace MaktabTaha.Infrastructure.Migrations
                     b.Navigation("Referer");
 
                     b.Navigation("Religon");
-
-                    b.Navigation("RequestStatus");
 
                     b.Navigation("RequestType");
                 });

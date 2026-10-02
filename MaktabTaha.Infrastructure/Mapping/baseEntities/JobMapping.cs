@@ -14,7 +14,7 @@ namespace MaktabTaha.Infrastructure.Mapping.baseEntities
         public void Configure(EntityTypeBuilder<Job> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Title);
+            builder.Property(x => x.JobName);
         }
     }
 }

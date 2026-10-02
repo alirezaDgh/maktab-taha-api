@@ -9,6 +9,6 @@ namespace MaktabTaha.Domain.Entites.BaseEntities
 {
     public class Job : BaseEntity<int>
     {
-        public string Title { get; set; }
+        public string JobName { get; set; }
     }
 }

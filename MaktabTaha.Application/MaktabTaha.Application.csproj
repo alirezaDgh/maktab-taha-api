@@ -93,6 +93,10 @@
     <Folder Include="Features\BaseEntities\religon\Command\Delete\" />
     <Folder Include="Features\BaseEntities\religon\Command\Update\" />
     <Folder Include="Features\BaseEntities\religon\Query\Single\" />
+    <Folder Include="Features\BaseEntities\requestStatus\Command\Create\" />
+    <Folder Include="Features\BaseEntities\requestStatus\Command\Delete\" />
+    <Folder Include="Features\BaseEntities\requestStatus\Command\Update\" />
+    <Folder Include="Features\BaseEntities\requestStatus\Query\Single\" />
     <Folder Include="Features\BaseEntities\requestType\Command\Create\" />
     <Folder Include="Features\BaseEntities\requestType\Command\Delete\" />
     <Folder Include="Features\BaseEntities\requestType\Command\Update\" />

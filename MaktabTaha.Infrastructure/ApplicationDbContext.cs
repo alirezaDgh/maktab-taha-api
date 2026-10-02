@@ -25,7 +25,7 @@ namespace MaktabTaha.Infrastructure
         public DbSet<HouseHeadStatus> HouseHeadStatus { get; set; }
         public DbSet<HousingStatus> HousingStatus { get; set; }
         public DbSet<Job> Job { get; set; }
-        public DbSet<Nationalty> nationality { get; set; }
+        public DbSet<Nationality> Nationality { get; set; }
         public DbSet<OrphanStatus> OrphanStatus { get; set; }
         public DbSet<PhysicalStatus> PhysicalStatus { get; set; }
         public DbSet<PrivatenessStatus> PrivatenessStatus { get; set; }

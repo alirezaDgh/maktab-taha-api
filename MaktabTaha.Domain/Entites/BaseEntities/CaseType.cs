@@ -9,6 +9,6 @@ namespace MaktabTaha.Domain.Entites.BaseEntities
 {
     public class CaseType : BaseEntity<int>
     {
-        public string Title { get; set; }
+        public string CaseTypeName { get; set; }
     }
 }

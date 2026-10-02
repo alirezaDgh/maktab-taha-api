@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace MaktabTaha.Domain.Entites.BaseEntities
 {
-    public class Nationalty : BaseEntity<int>
+    public class Nationality : BaseEntity<int>
     {
-        public string Title { get; set; }
+        public string NationalityName { get; set; }
     }
 }

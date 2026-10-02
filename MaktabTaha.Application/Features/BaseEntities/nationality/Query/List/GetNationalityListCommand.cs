@@ -4,7 +4,7 @@ using MediatR;
 
 namespace MaktabTaha.Application.Features.BaseEntities.nationality.Query.List
 {
-    public class GetNationalityListCommand : IRequest<OperationResult<List<Nationalty>>>
+    public class GetNationalityListCommand : IRequest<OperationResult<List<Nationality>>>
     {
     }
 }

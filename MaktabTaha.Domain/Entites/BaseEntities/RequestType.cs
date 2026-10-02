@@ -9,6 +9,6 @@ namespace MaktabTaha.Domain.Entites.BaseEntities
 {
     public class RequestType : BaseEntity<int>
     {
-        public string Title { get; set; }
+        public string RequestTypeName { get; set; }
     }
 }

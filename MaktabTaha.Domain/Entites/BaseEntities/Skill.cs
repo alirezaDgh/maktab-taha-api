@@ -9,6 +9,6 @@ namespace MaktabTaha.Domain.Entites.BaseEntities
 {
     public class Skill : BaseEntity<int>
     {
-        public string Title { get; set; }
+        public string SkillName { get; set; }
     }
 }

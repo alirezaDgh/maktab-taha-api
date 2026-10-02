@@ -5,7 +5,7 @@ using MediatR;
 
 namespace MaktabTaha.Application.Features.BaseEntities.nationality.Query.List
 {
-    public class GetNationalityListHandler : IRequestHandler<GetNationalityListCommand, OperationResult<List<Nationalty>>>
+    public class GetNationalityListHandler : IRequestHandler<GetNationalityListCommand, OperationResult<List<Nationality>>>
     {
         private readonly INationalityRepository _repository;
 
@@ -14,9 +14,9 @@ namespace MaktabTaha.Application.Features.BaseEntities.nationality.Query.List
             _repository = repository;
         }
 
-        public async Task<OperationResult<List<Nationalty>>> Handle(GetNationalityListCommand request, CancellationToken cancellationToken)
+        public async Task<OperationResult<List<Nationality>>> Handle(GetNationalityListCommand request, CancellationToken cancellationToken)
         {
-            var operation = new OperationResult<List<Nationalty>>();
+            var operation = new OperationResult<List<Nationality>>();
 
             var Nationalities = await _repository.List();
 

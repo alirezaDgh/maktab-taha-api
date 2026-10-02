@@ -38,5 +38,7 @@ namespace MaktabTaha.Application.Features.request.Command.Create
         public int AreaId { get; set; }
 
         public int ReligonId { get; set; }
+
+        public int RequestStatusId { get; set; }
     }
 }

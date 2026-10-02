@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace MaktabTaha.Infrastructure.Mapping.baseEntities
 {
-    public class NationaltyMapping : IEntityTypeConfiguration<Nationalty>
+    public class NationalityMapping : IEntityTypeConfiguration<Nationality>
     {
-        public void Configure(EntityTypeBuilder<Nationalty> builder)
+        public void Configure(EntityTypeBuilder<Nationality> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Title);
+            builder.Property(x => x.NationalityName);
         }
     }
 }

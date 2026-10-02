@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MaktabTaha.Application.Interfaces.Repositories.BaseEntities
 {
-    public interface INationalityRepository : IGenericRepository<int, Nationality>
+    public interface IRequestStatusRepository : IGenericRepository<int, RequestStatus>
     {
     }
 }
